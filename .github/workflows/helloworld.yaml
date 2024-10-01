@@ -16,9 +16,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      # # Step 2: Print "Hello, Sohail!" to the console
-      # - name: Hello World Step
-      #   run: echo "Hello, Sohail !"  # Corrected this line
+      # Step 2: Print "Hello, Sohail!" to the console
+      - name: Hello World Step
+        run: echo "Hello, Sohail !"  # Corrected this line
 
   say-goodbye:
     runs-on: self-hosted  # Specifies the environment for the job (self-hosted runner)
