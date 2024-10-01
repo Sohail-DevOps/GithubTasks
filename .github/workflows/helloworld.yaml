@@ -9,7 +9,7 @@ on:
 # Define the jobs that will run as part of the workflow
 jobs:
   say-hello:
-    runs-on: ubuntu-latest  # Specifies the environment for the job (Linux)
+    runs-on: self-hosted  # Specifies the environment for the job (Linux)
     
     steps:
       # Step 1: Check out the code from the repository
