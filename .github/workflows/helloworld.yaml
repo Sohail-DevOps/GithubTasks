@@ -9,22 +9,22 @@ on:
 # Define the jobs that will run as part of the workflow
 jobs:
   say-hello:
-    runs-on: self-hosted  # Specifies the environment for the job (Linux)
+    runs-on: self-hosted  # Specifies the environment for the job (self-hosted runner)
     
     steps:
       # Step 1: Check out the code from the repository
       - name: Checkout code
         uses: actions/checkout@v2
         
-      # Step 2: Print "Hello World" to the console
+      # Step 2: Print "Hello, Sohail!" to the console
       - name: Hello World Step
-        run: sh "Hello, Sohail!"
+        run: echo "Hello, Sohail!"  # Corrected this line
+
   say-goodbye:
-    runs-on: self-hosted  # Specifies the environment for the job
+    runs-on: self-hosted  # Specifies the environment for the job (self-hosted runner)
     needs: say-hello  # This ensures 'say-hello' runs before 'say-goodbye'
     
     steps:
-      # Step 1: Print "Goodbye World" to the console
+      # Step 1: Print "Goodbye, Sohail!" to the console
       - name: Goodbye World Step
-        run: sh "Goodbye, Sohail!"
-
+        run: echo "Goodbye, Sohail!"  # Corrected this line
