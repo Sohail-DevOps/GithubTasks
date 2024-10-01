@@ -20,7 +20,7 @@ jobs:
       - name: Hello World Step
         run: echo "Hello, Sohail!"
   say-goodbye:
-    runs-on: ubuntu-latest  # Specifies the environment for the job
+    runs-on: self-hosted  # Specifies the environment for the job
     needs: say-hello  # This ensures 'say-hello' runs before 'say-goodbye'
     
     steps:
