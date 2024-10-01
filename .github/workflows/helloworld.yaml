@@ -19,4 +19,12 @@ jobs:
       # Step 2: Print "Hello World" to the console
       - name: Hello World Step
         run: echo "Hello, World!"
+  say-goodbye:
+    runs-on: ubuntu-latest  # Specifies the environment for the job
+    needs: say-hello  # This ensures 'say-hello' runs before 'say-goodbye'
+    
+    steps:
+      # Step 1: Print "Goodbye World" to the console
+      - name: Goodbye World Step
+        run: echo "Goodbye, World!"
 
