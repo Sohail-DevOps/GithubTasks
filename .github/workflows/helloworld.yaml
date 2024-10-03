@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test:
-    runs-on: [self-hosted, myrunner] 
+    runs-on: [self-hosted, runner] 
 
     steps:
       # Step 1: Checkout code
