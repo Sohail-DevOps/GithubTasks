@@ -1,24 +1,30 @@
-name: Self-Hosted Runner Test
+name: Hello World Workflow
 
-on: [push]
+# Controls when the workflow will run
+on:
+  push:
+    branches:
+      - main  # Triggers the workflow on push to the main branch
 
+# Define the jobs that will run as part of the workflow
 jobs:
-  test:
-    runs-on: [self-hosted, runner] 
-
+  say-hello:
+    runs-on: [ self-hosted, runner ]  # Specifies the environment for the job (self-hosted runner)
+    
     steps:
-      # Step 1: Checkout code
+      # Step 1: Check out the code from the repository
       - name: Checkout code
-        uses: actions/checkout@v3  # Updated to the correct version
+        uses: actions/checkout@v2
+        
+      # Step 2: Print "Hello, Sohail!" to the console
+      - name: Hello World Step
+        run: echo "Hello, Sohail!"  # Corrected this line
 
-      # Step 2: Print runner information
-      - name: Print runner information
-        run: |
-          echo "Runner name: $RUNNER_NAME"
-          echo "Runner OS: $RUNNER_OS"
-          echo "Runner architecture: $RUNNER_ARCH"
-
-      # Step 3: Run a command
-      - name: Run a command
-        run: |
-          echo "Hello from self-hosted runner!"
+  say-goodbye:
+    runs-on: self-hosted  # Specifies the environment for the job (self-hosted runner)
+    needs: say-hello  # This ensures 'say-hello' runs before 'say-goodbye'
+    
+    steps:
+      # Step 1: Print "Goodbye, Sohail!" to the console
+      - name: Goodbye World Step
+        run: echo "Goodbye, Sohail!"  # Corrected this line
